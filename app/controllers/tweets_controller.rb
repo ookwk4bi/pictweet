@@ -1,4 +1,5 @@
 class TweetsController < ApplicationController
+  before_action :set_tweet, only: [:edit, :show]
   def index
     @tweets = Tweet.all
   end
@@ -23,8 +24,26 @@ class TweetsController < ApplicationController
     end
   end
 
+  def edit 
+    
+  end
+
+  def update
+    @tweet = Tweet.find(params[:id])
+    @tweet.update(tweet_params)
+    redirect_to root_path
+  end
+
+  def show
+    
+  end
+
 private
   def tweet_params
     params.require(:tweet).permit(:name, :text, :image)
+  end
+
+  def set_tweet
+    @tweet = Tweet.find(params[:id])
   end
 end
