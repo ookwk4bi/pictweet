@@ -1,0 +1,5 @@
+<%= form_with(model: @tweet, local: true) do |form|%>
+  <%= form.text_field :image, placeholder: "Image Url" %>
+  <%= form.text_field :text, placeholder: "text", row: "10"%>
+  <%= form.submit "SEND" %>
+<% end %>
