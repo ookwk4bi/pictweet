@@ -19,7 +19,9 @@
       </div>
       <p> <%= tweet.text %></p>
       <span class="name">
-        <%= tweet.name %>
+        <a href="/users/<%= tweet.user.id %>">
+        <%= tweet.user.nickname %>
+        </a>
       </span>
     </div>
   <% end %>
